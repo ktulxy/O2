@@ -14,6 +14,7 @@ public class BrowseDriver {
     public void invokeBrowser(){
         System.setProperty("webdriver.chrome.driver","C:\\DRIVERS\\operadriver.exe");
         driver = new ChromeDriver();
+       // driver.manage().window().fullscreen();  -- почему возвращается в прежний режим
     }
 
     @AfterSuite

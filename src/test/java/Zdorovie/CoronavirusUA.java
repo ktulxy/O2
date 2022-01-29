@@ -2,16 +2,11 @@ package Zdorovie;
 
 import Driver.BrowseDriver;
 import Page.Login;
-import Page.Menu;
 import Page.Zdorovie.Corona;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
-
 import static Page.Menu.Healthy;
-
-import static Page.Zdorovie.Corona.Coronavirus.corona;
-
+import static Page.Zdorovie.Corona.Coronavirus.coronaСhoice;
 
 
 public class CoronavirusUA extends BrowseDriver {
@@ -24,13 +19,14 @@ public class CoronavirusUA extends BrowseDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Healthy.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        corona.click();
+        coronaСhoice.click();
     }
 
     @Test(priority = 2)
     public void data(){
-        Corona corona = new Corona();
-        corona.coronaData("01.01.2000");
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Corona.coronaData("01.01.2000");
 
     }
 }
