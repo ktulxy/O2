@@ -1,7 +1,6 @@
 package Page.Zdorovie;
 
 import Driver.BrowseDriver;
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -15,9 +14,7 @@ import static Driver.BrowseDriver.driver;
 public class Corona {
 
     public static  WebElement birthDay = driver.findElement(By.xpath("//input[@id='7319SubjectInsuredBirthDate']"));
-
     public static  WebElement order = (new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='sumContainer']/input"))));
-   // public static WebElement order = driver.findElement(By.xpath("//div[@id='sumContainer']/input"));
 
    public class Coronavirus extends BrowseDriver {
 
@@ -28,6 +25,11 @@ public class Corona {
         birthDay.click();
         birthDay.sendKeys(date + Keys.ENTER);
 
+    }
+    public static String isDogovor(){
+       WebElement dogovor = driver.findElement(By.xpath("//*/text()[normalize-space(.)='Параметри договору']/parent::*"));
+          String isTrueDogovor = dogovor.getText();
+          return isTrueDogovor;
 
     }
 }
