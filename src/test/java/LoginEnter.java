@@ -3,11 +3,9 @@ import Page.Login;
 import Page.Menu;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
-
 import static Page.Login.checkLogin;
-import static Page.Menu.*;
+
 
 
 public class LoginEnter  extends BrowseDriver {
@@ -15,7 +13,7 @@ public class LoginEnter  extends BrowseDriver {
 
     @Test(priority = 1)
     public static void testLogin() {
-        BrowseDriver.driver.get("https://ais2test.ingo.ua/webcenter/system/login.jsp");
+        driver.get("https://ais2test.ingo.ua/webcenter/system/login.jsp");
         Login lg = new Login();
         lg.initialize("omudritsky", "123666456");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
