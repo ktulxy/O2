@@ -29,13 +29,17 @@ public class CoronavirusUA extends BrowseDriver {
     @Test(priority = 2)
     public void data() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        Corona.coronaData("01.01.2000");
+        Corona.coronaData("01.01.2000", "40000");
         Thread.sleep(2000);
         Actions actions = new Actions(driver);
         actions.moveToElement(order);
         actions.perform();
         order.click();
         Assert.assertEquals(isDogovor(),"Параметри договору");
+    }
+
+    @Test(priority = 3)
+    public void oformlenie(){
 
     }
 }
