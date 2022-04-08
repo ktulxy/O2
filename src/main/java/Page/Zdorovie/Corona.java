@@ -32,13 +32,13 @@ public class Corona {
     }
     public static String isDogovor(){
        WebElement dogovor = driver.findElement(By.xpath("//*/text()[normalize-space(.)='Параметри договору']/parent::*"));
-          String isTrueDogovor = dogovor.getText();
-          return isTrueDogovor;
+          String dogovorCheck = dogovor.getText();
+          return dogovorCheck;
 
     }
     public static String confirmation(){
       WebElement signing = driver.findElement(By.xpath("//p[contains(.,'Для підписання договору відправте СМС-код на номер телефону страхувальника')]"));
-      String isTrueSigning = signing.getText();
-      return isTrueSigning;
+      String signingCheck = signing.getText();
+      return signingCheck;
     }
 }

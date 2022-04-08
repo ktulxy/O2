@@ -42,6 +42,7 @@ public class Coronavirusplus extends BrowseDriver {
     @Test(priority = 3)
     public void registration() throws InterruptedException {
         detailsOfInsurer();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Assert.assertEquals(confirmation(),"Для підписання договору відправте СМС-код на номер телефону страхувальника");
     }
 }
