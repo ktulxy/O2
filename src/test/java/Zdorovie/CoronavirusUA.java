@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import static Page.Menu.Healthy;
 import static Page.Zdorovie.Corona.*;
-import static Page.Zdorovie.Corona.Coronavirus.choice;
-
+import static Page.Zdorovie.Corona.Coronavirus.coronavirusUa;
+import static Page.Zdorovie.Registration.detailsOfInsurer;
 
 
 public class CoronavirusUA extends BrowseDriver {
@@ -23,13 +23,13 @@ public class CoronavirusUA extends BrowseDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Healthy.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        choice.click();
+        coronavirusUa.click();
     }
 
     @Test(priority = 2)
     public void data() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        Corona.coronaData("01.01.2000", "40000");
+        Corona.coronaUA("01.01.2000");
         Thread.sleep(2000);
         Actions actions = new Actions(driver);
         actions.moveToElement(order);
@@ -39,7 +39,9 @@ public class CoronavirusUA extends BrowseDriver {
     }
 
     @Test(priority = 3)
-    public void oformlenie(){
-
+    public void registration() throws InterruptedException {  // Не подходит с короназахиста так как есть
+        detailsOfInsurer();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Assert.assertEquals(confirmation(),"Для підписання договору відправте СМС-код на номер телефону страхувальника");
     }
 }

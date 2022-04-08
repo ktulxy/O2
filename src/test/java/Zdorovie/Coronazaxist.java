@@ -8,13 +8,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.time.Duration;
 import static Page.Menu.Healthy;
-import static Page.Registration.detailsOfInsurer;
+import static Page.Zdorovie.Corona.Coronavirus.coronazaxist;
+import static Page.Zdorovie.Registration.detailsOfInsurer;
 import static Page.Zdorovie.Corona.*;
-import static Page.Zdorovie.Corona.Coronavirus.choice;
 
 
 
-public class Coronavirusplus extends BrowseDriver {
+
+public class Coronazaxist extends BrowseDriver {
 
     @Test(priority = 1)
     public void Healthy(){
@@ -24,13 +25,13 @@ public class Coronavirusplus extends BrowseDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Healthy.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        choice.click();
+        coronazaxist.click();
     }
 
     @Test(priority = 2)
     public void data() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        Corona.coronaData("15.06.1986", "40000");
+        Corona.coronaZax("15.06.1986", "40000");
         Thread.sleep(2000);
         Actions actions = new Actions(driver);
         actions.moveToElement(order);

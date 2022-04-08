@@ -1,4 +1,4 @@
-package Page;
+package Page.Zdorovie;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -25,7 +25,7 @@ public class Registration {
     //  Contacts
     public static WebElement tel = driver.findElement(By.xpath("//div[10]/div/div/input"));
     public static WebElement mail = driver.findElement(By.xpath("//div[10]/div[2]/div/input"));
-    //  Adress living
+    //  Address living
     public static WebElement oblast = driver.findElement(By.xpath("//div[12]/div/div/div/button/div/div/div"));
     public static WebElement oblastSearch = driver.findElement(By.xpath("//div[12]/div/div/div/div/div/input"));
     public static WebElement city = driver.findElement(By.xpath("//div[12]/div[2]/div/div/button/div/div/div"));
@@ -35,7 +35,7 @@ public class Registration {
     public static WebElement house = driver.findElement(By.xpath("//div[13]/div[3]/div/div"));
     public static WebElement houseSearch = driver.findElement(By.xpath("//div[13]/div[3]/div/div/div/div/input"));
     public static WebElement flat = driver.findElement(By.xpath("//div[14]/div[2]/div/input"));
-    // Make polis
+    // Make police
     public static WebElement makePolis = driver.findElement(By.xpath("//section[5]/div/div/div/input"));
 
 
@@ -63,13 +63,13 @@ public static void detailsOfInsurer() throws InterruptedException {
     oblast.click();
     oblastSearch.sendKeys("КИЇВСЬКА ОБЛАСТЬ", Keys.ENTER, Keys.ESCAPE);
     city.click();
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     citySearch.sendKeys("Київ", Keys.ENTER, Keys.ESCAPE);
     street.click();
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     streetSearch.sendKeys("майдан Незалежності", Keys.ENTER,Keys.ESCAPE);
     house.click();
-    Thread.sleep(3000);
+    Thread.sleep(2000);
     houseSearch.sendKeys("2", Keys.ENTER, Keys.ESCAPE);
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     makePolis.click();
